@@ -15,6 +15,18 @@
     height: 50px;
 }
 
+.card-consultar-chamado {
+    padding: 30px 0 0 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.card-abrir-chamado {
+    padding: 30px 0 0 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
 nav img {
     height: 30;
     width: 30;

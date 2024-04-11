@@ -24,8 +24,7 @@ if (isset($_GET["login"])) {
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="_css/index_css.css">
-    <link rel="stylesheet" href="_css/style.css">
+    <link rel="stylesheet" href="../_css/style.css">
 
 </head>
 
@@ -34,7 +33,7 @@ if (isset($_GET["login"])) {
 
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-            <img src="_img/logo.png" class="d-inline-block align-top" alt="logo.png">
+            <img src="../_img/logo.png" class="d-inline-block align-top" alt="logo.png">
             App Help Desk
         </a>
     </nav>
@@ -52,7 +51,7 @@ if (isset($_GET["login"])) {
                     </div>
 
                     <div class="card-body">
-                        <form action="valida_login.php" method="post">
+                        <form action="../_module/validateLogin_modu.php" method="post">
 
                             <div class="form-group">
                                 <input name="email" type="emai" class="form-control" placeholder="E-mail">

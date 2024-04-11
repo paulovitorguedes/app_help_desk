@@ -1,7 +1,6 @@
 <?php
 
-require_once "valida_session.php";
-
+require_once $_SERVER["DOCUMENT_ROOT"]."/GitHub/app_help_desk/_module/validateSession_modu.php";
 
 ?>
 
@@ -14,26 +13,20 @@ require_once "valida_session.php";
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="../_css/style.css">
 
-    <style>
-        .card-consultar-chamado {
-            padding: 30px 0 0 0;
-            width: 100%;
-            margin: 0 auto;
-        }
-    </style>
 </head>
 
 <body>
 
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-            <img src="_img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="logo.png">
+            <img src="../_img/logo.png" class="d-inline-block align-top" alt="logo.png">
             App Help Desk
         </a>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="logoff.php">SAIR</a>
+                <a class="nav-link" href="../_module/close_modu.php">SAIR</a>
             </li>
         </ul>
     </nav>

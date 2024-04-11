@@ -1,6 +1,6 @@
 <?php
 
-require_once "valida_session.php";
+require_once $_SERVER["DOCUMENT_ROOT"]."/GitHub/app_help_desk/_module/validateSession_modu.php";
 
 ?>
 
@@ -14,8 +14,7 @@ require_once "valida_session.php";
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="_css/home_css.css">
-    <link rel="stylesheet" href="_css/style.css">
+    <link rel="stylesheet" href="../_css/style.css">
 
 </head>
 
@@ -23,12 +22,12 @@ require_once "valida_session.php";
 
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="home.php">
-            <img src="_img/logo.png" class="d-inline-block align-top" alt="logo.pmg">
+            <img src="../_img/logo.png" class="d-inline-block align-top" alt="logo.pmg">
             App Help Desk
         </a>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="logoff.php">SAIR</a>
+                <a class="nav-link" href="../_module/close_modu.php">SAIR</a>
             </li>
         </ul>
     </nav>
@@ -44,14 +43,14 @@ require_once "valida_session.php";
                     <div class="card-body">
                         <div class="row">
                             <div class="col-6 d-flex justify-content-center">
-                                <a href="abrir_chamado.php">
-                                    <img id="img_edita" src="_img/formulario_abrir_chamado.png"
+                                <a href="help_request.php">
+                                    <img id="img_edita" src="../_img/formulario_abrir_chamado.png"
                                         alt="formulario_abrir_chamado.png">
                                 </a>
                             </div>
                             <div class="col-6 d-flex justify-content-center">
-                                <a href="consultar_chamado.php">
-                                    <img id="img_consulta" src="_img/formulario_consultar_chamado.png"
+                                <a href="consult_request.php">
+                                    <img id="img_consulta" src="../_img/formulario_consultar_chamado.png"
                                         alt="formulario_consultar_chamado.png">
                                 </a>
                             </div>

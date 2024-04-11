@@ -13,12 +13,12 @@ $users = array(
 foreach ($users as ["email" => $user, "password" => $pass]) {
     if ($_POST["email"] == $user && $_POST["senha"] == $pass) {
         $_SESSION["autentication"] = true;
-        header("Location: home.php");
+        header("Location: ../_vew/home.php");
         break;
 
     } else {
         $_SESSION["autentication"] = false;
-        header("Location: index.php?login=erro");
+        header("Location: ../_vew/index.php?login=erro");
     }
 }
 

@@ -1,7 +1,6 @@
 <?php
 
-require_once "valida_session.php";
-
+require_once $_SERVER["DOCUMENT_ROOT"]."/GitHub/app_help_desk/_module/validateSession_modu.php";
 
 ?>
 
@@ -15,21 +14,14 @@ require_once "valida_session.php";
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <style>
-        .card-abrir-chamado {
-            padding: 30px 0 0 0;
-            width: 100%;
-            margin: 0 auto;
-        }
-    </style>
+        <link rel="stylesheet" href="../_css/style.css">
 </head>
 
 <body>
 
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-            <img src="_img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            <img src="../_img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
             App Help Desk
         </a>
         <ul class="navbar-nav">
