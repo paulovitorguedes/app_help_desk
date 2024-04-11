@@ -36,6 +36,11 @@ if (isset($_GET["login"])) {
             <img src="../_img/logo.png" class="d-inline-block align-top" alt="logo.png">
             App Help Desk
         </a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Cadastrar</a>
+            </li>
+        </ul>
     </nav>
 
 
