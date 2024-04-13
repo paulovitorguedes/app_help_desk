@@ -18,7 +18,7 @@ foreach ($users as ["email" => $user, "password" => $pass]) {
 
     } else {
         $_SESSION["autentication"] = false;
-        header("Location: ../_vew/index.php?login=erro");
+        header("Location: ../index.php?login=erro");
     }
 }
 
