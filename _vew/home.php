@@ -27,7 +27,7 @@ require_once $_SERVER["DOCUMENT_ROOT"]."/GitHub/app_help_desk/_module/validateSe
         </a>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="../_module/close_modu.php">SAIR</a>
+                <a class="nav-link" href="../_module/closeModu.php">SAIR</a>
             </li>
         </ul>
     </nav>
