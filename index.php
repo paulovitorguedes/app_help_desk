@@ -56,7 +56,7 @@ if (isset($_GET["login"])) {
                     </div>
 
                     <div class="card-body">
-                        <form action="_module/validateLogin_modu.php" method="post">
+                        <form action="_module/validateLoginModu.php" method="post">
 
                             <div class="form-group">
                                 <input name="email" type="emai" class="form-control" placeholder="E-mail">
