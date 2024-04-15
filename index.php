@@ -38,7 +38,7 @@ if (isset($_GET["login"])) {
         </a>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Cadastrar</a>
+                <a class="nav-link" href="_vew/userRegistration.php">Cadastrar</a>
             </li>
         </ul>
     </nav>

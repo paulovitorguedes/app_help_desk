@@ -1,11 +1,3 @@
-<?php
-
-require_once $_SERVER["DOCUMENT_ROOT"]."/GitHub/app_help_desk/_module/validateSession_modu.php";
-
-?>
-
-
-
 <html>
 
 <head>
@@ -37,7 +29,7 @@ require_once $_SERVER["DOCUMENT_ROOT"]."/GitHub/app_help_desk/_module/validateSe
             <div class="card-abrir-chamado">
                 <div class="card">
                     <div class="card-header">
-                        Abertura de chamado
+                        Cadastro de Usuário
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -45,30 +37,24 @@ require_once $_SERVER["DOCUMENT_ROOT"]."/GitHub/app_help_desk/_module/validateSe
 
                                 <form>
                                     <div class="form-group">
-                                        <label>Título</label>
-                                        <input type="text" class="form-control" placeholder="Título">
+                                        <label>Nome</label>
+                                        <input name="nome" type="text" class="form-control" placeholder="Nome">
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Categoria</label>
-                                        <select class="form-control">
-                                            <option>Criação Usuário</option>
-                                            <option>Impressora</option>
-                                            <option>Hardware</option>
-                                            <option>Software</option>
-                                            <option>Rede</option>
-                                        </select>
+                                        <label>CPF</label>
+                                        <input name="cpf" type="text" class="form-control" placeholder="CPF">
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Descrição</label>
-                                        <textarea class="form-control" rows="3"></textarea>
+                                        <label>senha</label>
+                                        <input name="nome" type="text" class="form-control" placeholder="Password">
                                     </div>
 
                                     <div class="row mt-5">
                                         <div class="col-6">
-                                            <a href="home.php" class="btn btn-lg btn-warning btn-block"
-                                                type="submit">Voltar</a>
+                                            <a href="../_module/close_modu.php" class="btn btn-lg btn-warning btn-block"
+                                                type="submit">Já tenho login</a>
                                         </div>
 
                                         <div class="col-6">
