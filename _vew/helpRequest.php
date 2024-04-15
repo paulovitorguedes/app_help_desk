@@ -43,15 +43,15 @@ require_once $_SERVER["DOCUMENT_ROOT"]."/GitHub/app_help_desk/_module/validateSe
                         <div class="row">
                             <div class="col">
 
-                                <form>
+                                <form method="post" action="../_module/logRequestsModu.php">
                                     <div class="form-group">
                                         <label>Título</label>
-                                        <input type="text" class="form-control" placeholder="Título">
+                                        <input type="text" class="form-control" name="titulo" placeholder="Título">
                                     </div>
 
                                     <div class="form-group">
                                         <label>Categoria</label>
-                                        <select class="form-control">
+                                        <select class="form-control" name="categoria">
                                             <option>Criação Usuário</option>
                                             <option>Impressora</option>
                                             <option>Hardware</option>
@@ -62,7 +62,7 @@ require_once $_SERVER["DOCUMENT_ROOT"]."/GitHub/app_help_desk/_module/validateSe
 
                                     <div class="form-group">
                                         <label>Descrição</label>
-                                        <textarea class="form-control" rows="3"></textarea>
+                                        <textarea class="form-control" name="descricao" rows="3"></textarea>
                                     </div>
 
                                     <div class="row mt-5">
