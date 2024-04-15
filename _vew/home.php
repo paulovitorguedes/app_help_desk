@@ -43,7 +43,7 @@ require_once $_SERVER["DOCUMENT_ROOT"]."/GitHub/app_help_desk/_module/validateSe
                     <div class="card-body">
                         <div class="row">
                             <div class="col-6 d-flex justify-content-center">
-                                <a href="help_request.php">
+                                <a href="helpRequest.php">
                                     <img id="img_edita" src="../_img/formulario_abrir_chamado.png"
                                         alt="formulario_abrir_chamado.png">
                                 </a>
