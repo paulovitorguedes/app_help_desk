@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER["DOCUMENT_ROOT"]."/GitHub/app_help_desk/_module/validateSession_modu.php";
+require_once $_SERVER["DOCUMENT_ROOT"]."/GitHub/app_help_desk/_module/validateSessionModu.php";
 
 ?>
 
