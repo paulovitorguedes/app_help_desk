@@ -1,7 +1,7 @@
 <?php
 
-require "intraconection.php";
-require_once "../_entity/user.php";
+require ("intraconection.php");
+require_once (realpath("../_class/_entity/user.php"));
 
 class UserModel
 {
@@ -10,6 +10,15 @@ class UserModel
     function __construct()
     {
         $this->conectBd = new Connection();
+    }
+
+
+    function testeDeFuncao($user)
+    {
+        
+        $sql = "INSERT INTO user (user_name, user_cpf, user_password) VALUES ('" . $user->getName() . "', '" . $user->getCpf() . "', '" . $user->getPassword() . "')";
+        $saida = $this->conectBd->executarMysql($sql);
+        return $saida;
     }
 
     function registerUser($user)

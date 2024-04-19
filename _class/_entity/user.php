@@ -2,7 +2,10 @@
 
 class User
 {
-    var $id, $cpf, $name, $password;
+    private $id;
+    private $name;
+    private $cpf;
+    private $password;
 
     function __construct($cpf, $name, $password, $id = "")
     {
@@ -12,20 +15,20 @@ class User
         $this->setPassword($password);
     }
 
-    function setId(string $id): void
+    public function setId(string $id): void
     {
         $this->id = $id;
     }
-    function setName(string $name): void
+    public function setName(string $name): void
     {
         $this->name = strtoupper($name);
     }
-    function setPassword(string $password): void
+    public function setPassword(string $password): void
     {
-        $this->password = strtoupper($password);
+        $this->password = $password;
     }
 
-    function setCpf(string $cpf): void
+    public function setCpf(string $cpf): void
     {
         $this->cpf = $cpf;
     }
@@ -33,24 +36,24 @@ class User
 
 
 
-    function getId(string $id): string
+    public function getId()
     {
-        return $this->$id;
+        return $this->id;
     }
 
-    function getName(string $name): string
+    public function getName()
     {
-        return $this->$name;
+        return $this->name;
     }
 
-    function getpassword(string $password): string
+    public function getPassword()
     {
-        return $this->$password;
+        return $this->password;
     }
 
-    function getCpf(string $cpf): string
+    public function getCpf()
     {
-        return $this->$cpf;
+        return $this->cpf;
     }
 
 
