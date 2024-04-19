@@ -1,5 +1,5 @@
 <?php
-class Conexao
+class Connection
 {
 
 	private $conn;
