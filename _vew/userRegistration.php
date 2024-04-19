@@ -48,7 +48,7 @@
 
                                     <div class="form-group">
                                         <label>senha</label>
-                                        <input name="nome" type="text" class="form-control" placeholder="Password">
+                                        <input name="nome" type="password" class="form-control" placeholder="Password">
                                     </div>
 
                                     <div class="row mt-5">
@@ -58,7 +58,7 @@
                                         </div>
 
                                         <div class="col-6">
-                                            <button class="btn btn-lg btn-info btn-block" type="submit">Abrir</button>
+                                            <button class="btn btn-lg btn-info btn-block" type="submit">Cadastrar</button>
                                         </div>
                                     </div>
                                 </form>
