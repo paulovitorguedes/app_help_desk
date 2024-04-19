@@ -8,8 +8,8 @@ class Connection
 	{
 		$endereco = "127.0.0.1";
 		$porta = "3306";
-		$usuario = "root";
-		$senha = "";
+		$usuario = "admin";
+		$senha = "admin123";
 		$database = "helpdesk";
 
 		$msg[0] = "Não foi possível conexão no banco de dados";

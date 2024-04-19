@@ -4,7 +4,7 @@ class User
 {
     var $id, $cpf, $name, $password;
 
-    function __construct($cpf, $name, $password, $id = null)
+    function __construct($cpf, $name, $password, $id = "")
     {
         $this->setId($id);
         $this->setCpf($cpf);

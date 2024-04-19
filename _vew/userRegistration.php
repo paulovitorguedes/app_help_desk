@@ -35,7 +35,7 @@
                         <div class="row">
                             <div class="col">
 
-                                <form>
+                                <form action="../_module/userModu.php" method="post">
                                     <div class="form-group">
                                         <label>Nome</label>
                                         <input name="nome" type="text" class="form-control" placeholder="Nome">
@@ -48,7 +48,7 @@
 
                                     <div class="form-group">
                                         <label>senha</label>
-                                        <input name="nome" type="password" class="form-control" placeholder="Password">
+                                        <input name="senha" type="password" class="form-control" placeholder="Password">
                                     </div>
 
                                     <div class="row mt-5">
