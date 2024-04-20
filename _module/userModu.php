@@ -12,5 +12,7 @@ $password = password_hash($password, PASSWORD_DEFAULT);
 
 $user = new User($cpf, $name, $password);
 $userModel = new UserModel();
-$userModel->testeDeFuncao($user);
-echo var_dump($userModel);
+$result = $userModel->registerUser($user);
+
+
+

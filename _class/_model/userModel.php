@@ -13,28 +13,18 @@ class UserModel
     }
 
 
-    function testeDeFuncao($user)
-    {
-        
-        $sql = "INSERT INTO user (user_name, user_cpf, user_password) VALUES ('" . $user->getName() . "', '" . $user->getCpf() . "', '" . $user->getPassword() . "')";
-        $saida = $this->conectBd->executarMysql($sql);
-        return $saida;
-    }
-
     function registerUser($user)
     {
-        $cont = "SELECT COUNT(*) as qtd FROM user WHERE name_user='" . $user->getNome() . "'";
-        $saida = $this->conectBd->executarMysql($cont);
-        $cont = $saida->fetch_array(MYSQLI_ASSOC);
-
-        //echo print_r($cont, true);
-        if ($cont['qtd'] == '0') {
-            $sql = "INSERT INTO user (name_user) VALUE ('" . $user->getNome() . "')";
-            $saida = $this->conectBd->executarMysql($sql);
-            return $saida;
-
-        } else {
-            return "exist";
+        $query = "SELECT COUNT(*) as qtd FROM user WHERE user_cpf='" . $user->getCpf() . "'";
+        $queryResult = $this->conectBd->executarMysql($query);
+        $result = $queryResult->fetch_array(MYSQLI_ASSOC);
+        $insert = false;
+        if ($result["qtd"] == 0) {
+            $query = "INSERT INTO user (user_name, user_cpf, user_password) VALUES ('" . $user->getName() . "', '" . $user->getCpf() . "', '" . $user->getPassword() . "')";
+            $queryResult = $this->conectBd->executarMysql($query);
+            $insert = true;
         }
+        return $insert;
     }
+
 }
