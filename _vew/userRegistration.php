@@ -37,18 +37,18 @@
 
                                 <form action="../_module/userModu.php" method="post">
                                     <div class="form-group">
-                                        <label>Nome</label>
-                                        <input name="nome" type="text" class="form-control" placeholder="Nome">
+                                        <label>Email</label>
+                                        <input name="register-email" type="email" class="form-control" placeholder="Email" required>
                                     </div>
 
                                     <div class="form-group">
                                         <label>CPF</label>
-                                        <input name="cpf" type="text" class="form-control" placeholder="CPF">
+                                        <input name="register-cpf" type="text" class="form-control" placeholder="CPF" required>
                                     </div>
 
                                     <div class="form-group">
                                         <label>senha</label>
-                                        <input name="senha" type="password" class="form-control" placeholder="Password">
+                                        <input name="register-senha" type="password" class="form-control" placeholder="Password" required>
                                     </div>
 
                                     <div class="row mt-5">

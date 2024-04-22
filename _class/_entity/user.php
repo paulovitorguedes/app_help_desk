@@ -3,15 +3,15 @@
 class User
 {
     private $id;
-    private $name;
+    private $email;
     private $cpf;
     private $password;
 
-    function __construct($cpf, $name, $password, $id = "")
+    function __construct($cpf, $email, $password, $id = "")
     {
         $this->setId($id);
         $this->setCpf($cpf);
-        $this->setName($name);
+        $this->setName($email);
         $this->setPassword($password);
     }
 
@@ -19,9 +19,9 @@ class User
     {
         $this->id = $id;
     }
-    public function setName(string $name): void
+    public function setName(string $email): void
     {
-        $this->name = strtoupper($name);
+        $this->email = mb_strtolower($email);
     }
     public function setPassword(string $password): void
     {
@@ -41,9 +41,9 @@ class User
         return $this->id;
     }
 
-    public function getName()
+    public function getEmail()
     {
-        return $this->name;
+        return $this->email;
     }
 
     public function getPassword()

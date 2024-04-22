@@ -1,19 +1,25 @@
 <?php
 
-$mens_error = null;
+$mens_login = null;
 if (isset($_GET["login"])) {
 
     switch ($_GET["login"]) {
         case "erro":
-            $mens_error = "Usuário ou senha inválido(s)";
+            $mens_login = "Usuário ou senha inválido(s)";
             break;
         case "erro_session":
-            $mens_error = "Necessária Autenticação";
+            $mens_login = "Necessária Autenticação";
+            break;
+        case "registered":
+            $mens_login = "Cadastro com sucesso, entre com login";
+            break;
+        case "noregistered":
+            $mens_login = "Cadastro com sucesso, entre com login";
             break;
         default:
-            $mens_error = "Erro Desconhecido!";
+            $mens_login = "Erro Desconhecido!";
     }
-}
+} 
 ?>
 
 <html>
@@ -56,20 +62,20 @@ if (isset($_GET["login"])) {
                     </div>
 
                     <div class="card-body">
-                        <form action="_module/validateLoginModu.php" method="post">
+                        <form action="_module/userModu.php" method="post">
 
                             <div class="form-group">
-                                <input name="email" type="emai" class="form-control" placeholder="E-mail">
+                                <input name="login-email" type="email" class="form-control" placeholder="E-mail" required>
                             </div>
 
                             <div class="form-group">
-                                <input name="senha" type="password" class="form-control" placeholder="Senha">
+                                <input name="login-senha" type="password" class="form-control" placeholder="Senha" required>
                             </div>
 
                             <!-- MENSSAGEM DE ERRO DE AUTENTICAÇÃO  -->
                             <div class="text-danger">
                                 <span>
-                                    <?= $mens_error ?>
+                                    <?= $mens_login ?>
                                 </span>
                             </div>
 
