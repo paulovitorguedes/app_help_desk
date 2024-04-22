@@ -1,3 +1,14 @@
+<?php
+
+$mens_login = null;
+if (isset($_GET["login"])) {
+
+    $mens_login = "Email já Cadastrado no sistema";
+}
+?>
+
+
+
 <html>
 
 <head>
@@ -6,7 +17,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="../_css/style.css">
+    <link rel="stylesheet" href="../_css/style.css">
 </head>
 
 <body>
@@ -38,17 +49,26 @@
                                 <form action="../_module/userModu.php" method="post">
                                     <div class="form-group">
                                         <label>Email</label>
-                                        <input name="register-email" type="email" class="form-control" placeholder="Email" required>
+                                        <input name="register-email" type="email" class="form-control"
+                                            placeholder="Email" required>
                                     </div>
 
                                     <div class="form-group">
                                         <label>CPF</label>
-                                        <input name="register-cpf" type="text" class="form-control" placeholder="CPF" required>
+                                        <input name="register-cpf" type="text" class="form-control" placeholder="CPF"
+                                            required>
                                     </div>
 
                                     <div class="form-group">
                                         <label>senha</label>
-                                        <input name="register-senha" type="password" class="form-control" placeholder="Password" required>
+                                        <input name="register-senha" type="password" class="form-control"
+                                            placeholder="Password" required>
+                                    </div>
+
+                                    <div class="text-danger">
+                                        <span>
+                                            <?= $mens_login ?>
+                                        </span>
                                     </div>
 
                                     <div class="row mt-5">
@@ -58,9 +78,11 @@
                                         </div>
 
                                         <div class="col-6">
-                                            <button class="btn btn-lg btn-info btn-block" type="submit">Cadastrar</button>
+                                            <button class="btn btn-lg btn-info btn-block"
+                                                type="submit">Cadastrar</button>
                                         </div>
                                     </div>
+
                                 </form>
 
                             </div>

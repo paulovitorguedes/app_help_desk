@@ -14,13 +14,27 @@ if (isset($_POST['register-email'])) {
     $password = filter_input(INPUT_POST, 'register-senha', FILTER_DEFAULT);
     $password = password_hash($password, PASSWORD_DEFAULT);
 
-
     $user = new User($cpf, $email, $password);
     $userModel = new UserModel();
-    $result = $userModel->insertUser($user);
-    if ($result) {
-        header("Location: ../index.php?login=registered");
+
+    $qtdEmail = $userModel->selectEmailUser($user);
+
+    //$qtdEmail == 0 Se não houver o email cadastrado
+    //$qtdEmail == 1 Se houver o email cadastrado
+    if ($qtdEmail) {
+        header("Location: ../_vew/userRegistration.php?login=exist");
+
+
+    } else {
+        $result = $userModel->insertUser($user);
+        if ($result) {
+            header("Location: ../index.php?login=registered");
+
+        } else {
+            header("Location: ../index.php?login=noregistered");
+        }
     }
+
 
 
 
@@ -33,12 +47,12 @@ if (isset($_POST['register-email'])) {
 
     $user = new User("", $email, $password);
     $userModel = new UserModel();
-    $passwordBD = $userModel->selectUser($user);
- 
-    if(password_verify($password, $passwordBD)) {
+    $passwordBD = $userModel->selecPasstUser($user);
+
+    if (password_verify($password, $passwordBD)) {
         $_SESSION["autentication"] = true;
         header("Location: ../_vew/home.php");
-   
+
     } else {
         $_SESSION["autentication"] = false;
         header("Location: ../index.php?login=erro");
