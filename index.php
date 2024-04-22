@@ -14,7 +14,7 @@ if (isset($_GET["login"])) {
             $mens_login = "Cadastro com sucesso, entre com login";
             break;
         case "noregistered":
-            $mens_login = "Cadastro com sucesso, entre com login";
+            $mens_login = "Falha com cadastro, tente novamente";
             break;
         default:
             $mens_login = "Erro Desconhecido!";

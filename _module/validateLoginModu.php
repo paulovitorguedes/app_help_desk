@@ -8,7 +8,6 @@ $users = array(
     array("email" => "user@teste.com.br", "password" => "abcd")
 );
 
-// var_dump($users);
 
 foreach ($users as ["email" => $user, "password" => $pass]) {
     if ($_POST["email"] == $user && $_POST["senha"] == $pass) {

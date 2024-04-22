@@ -13,7 +13,7 @@ class UserModel
     }
 
 
-    function insertUser($user) :bool
+    function insertUser($user): bool
     {
         $query = "SELECT COUNT(*) as qtd FROM user WHERE user_cpf='" . $user->getCpf() . "'";
         $queryResult = $this->conectBd->executarMysql($query);
@@ -25,6 +25,20 @@ class UserModel
             $insert = true;
         }
         return $insert;
+    }
+
+    function selectUser($user)
+    {
+        $select = "";
+        $query = "SELECT user_password as pass FROM user WHERE user_email='" . $user->getEmail() . "'";
+        $queryResult = $this->conectBd->executarMysql($query);
+        // echo var_dump($queryResult);
+        if ($queryResult->num_rows > 0) {
+            $result = $queryResult->fetch_array(MYSQLI_ASSOC);
+            $select = $result['pass'];
+        }
+
+        return $select;
     }
 
 }
