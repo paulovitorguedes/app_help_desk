@@ -1,14 +1,13 @@
 <?php
 
-$text = null;
-foreach($_POST as $key) {
-    if (isset($_POST[$key])) {
-        $text .= $key ."". $_POST[$key] . PHP_EOL;
-    }
-}
+$titulo = str_replace("#", "-", filter_input(INPUT_POST, 'titulo', FILTER_DEFAULT));
+$categoria = str_replace("#", "-", filter_input(INPUT_POST, 'categoria', FILTER_DEFAULT));
+$descricao = str_replace("#", "-", filter_input(INPUT_POST, 'descricao', FILTER_DEFAULT));
 
-echo $text;
+$text = "$titulo#$categoria#$descricao".PHP_EOL;
 
+$file = fopen("request.log", "a");
+fwrite($file, $text);
+fclose($file);
 
-fopen("request.log", "a");
 

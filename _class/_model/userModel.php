@@ -20,7 +20,7 @@ class UserModel
         return $queryResult;
     }
 
-    function selectEmailUser($user)
+    function selectEmailUser($user) :string
     {
         $query = "SELECT COUNT(*) as qtd FROM user WHERE user_email='" . $user->getEmail() . "'";
         $queryResult = $this->conectBd->executarMysql($query);
