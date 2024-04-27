@@ -3,6 +3,20 @@
 // require_once $_SERVER["DOCUMENT_ROOT"]."/GitHub/app_help_desk/_module/validateSessionModu.php";
 require_once "../_module/validateSessionModu.php";
 
+$mens = ".";
+$class = "class='text-warning'";
+if (isset($_GET["mens"])) {
+    if ($_GET["mens"] = "success") {
+        $mens = "Chamado registrado com sucesso!";
+        $class = "class='text-success'";
+    } else {
+        $mens = "Falha de registro do chamado!";
+        $class = "class='text-ganger'";
+    }
+}
+
+
+
 ?>
 
 
@@ -15,7 +29,7 @@ require_once "../_module/validateSessionModu.php";
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="../_css/style.css">
+    <link rel="stylesheet" href="../_css/style.css">
 </head>
 
 <body>
@@ -64,6 +78,12 @@ require_once "../_module/validateSessionModu.php";
                                     <div class="form-group">
                                         <label>Descrição</label>
                                         <textarea class="form-control" name="descricao" rows="3"></textarea>
+                                    </div>
+
+                                    <div <?= $class ?>>
+                                        <span>
+                                            <?= $mens ?>
+                                        </span>
                                     </div>
 
                                     <div class="row mt-5">

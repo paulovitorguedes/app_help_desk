@@ -7,7 +7,13 @@ $descricao = str_replace("#", "-", filter_input(INPUT_POST, 'descricao', FILTER_
 $text = "$titulo#$categoria#$descricao".PHP_EOL;
 
 $file = fopen("request.log", "a");
-fwrite($file, $text);
+$write = fwrite($file, $text);
 fclose($file);
+
+if($write){
+    header("Location: ../_vew/helpRequest.php?mens=success");
+} else {
+    header("Location: ../_vew/helpRequest.php?mens=error");
+}
 
 
