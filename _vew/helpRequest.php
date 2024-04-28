@@ -14,9 +14,6 @@ if (isset($_GET["mens"])) {
         $class = "class='text-ganger'";
     }
 }
-
-
-
 ?>
 
 
