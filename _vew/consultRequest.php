@@ -1,6 +1,5 @@
 <?php
 
-// require_once $_SERVER["DOCUMENT_ROOT"]."/GitHub/app_help_desk/_module/validateSessionModu.php";
 require_once "../_module/validateSessionModu.php";
 require_once "../_module/logRequestsModu.php";
 
