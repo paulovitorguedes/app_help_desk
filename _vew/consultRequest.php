@@ -2,6 +2,22 @@
 
 // require_once $_SERVER["DOCUMENT_ROOT"]."/GitHub/app_help_desk/_module/validateSessionModu.php";
 require_once "../_module/validateSessionModu.php";
+require_once "../_module/logRequestsModu.php";
+
+$registers = searchFileLog();
+$cardHtml = "";
+foreach ($registers as $values) {
+    $register = explode("#", $values);
+    if(count($register) < 3) continue;
+    
+    $cardHtml .= '<div class="card mb-3 bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">'.$register[0].'</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">'.$register[1].'</h6>
+                        <p class="card-text">'.$register[2].'</p>
+                    </div>
+                </div>';
+}
 
 ?>
 
@@ -14,7 +30,7 @@ require_once "../_module/validateSessionModu.php";
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="../_css/style.css">
+    <link rel="stylesheet" href="../_css/style.css">
 
 </head>
 
@@ -43,7 +59,8 @@ require_once "../_module/validateSessionModu.php";
 
                     <div class="card-body">
 
-                        <div class="card mb-3 bg-light">
+                        <?= $cardHtml ?>
+                        <!-- <div class="card mb-3 bg-light">
                             <div class="card-body">
                                 <h5 class="card-title">Título do chamado...</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
@@ -59,7 +76,7 @@ require_once "../_module/validateSessionModu.php";
                                 <p class="card-text">Descrição do chamado...</p>
 
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="row mt-5">
                             <div class="col-6">
