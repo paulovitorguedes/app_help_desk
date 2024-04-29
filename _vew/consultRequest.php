@@ -3,17 +3,16 @@
 require_once "../_module/validateSessionModu.php";
 require_once "../_module/logRequestsModu.php";
 
-$registers = searchFileLog();
+$register = searchFileLog();
 $cardHtml = "";
-foreach ($registers as $values) {
-    $register = explode("#", $values);
-    if(count($register) < 3) continue;
-    
+
+foreach ($register as $values) {
+
     $cardHtml .= '<div class="card mb-3 bg-light">
                     <div class="card-body">
-                        <h5 class="card-title">'.$register[0].'</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">'.$register[1].'</h6>
-                        <p class="card-text">'.$register[2].'</p>
+                        <h5 class="card-title">' . $values[0] . '</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">' . $values[1] . '</h6>
+                        <p class="card-text">' . $values[2] . '</p>
                     </div>
                 </div>';
 }
@@ -58,24 +57,8 @@ foreach ($registers as $values) {
 
                     <div class="card-body">
 
+                        <!-- Cards dos chamados HTML -->
                         <?= $cardHtml ?>
-                        <!-- <div class="card mb-3 bg-light">
-                            <div class="card-body">
-                                <h5 class="card-title">Título do chamado...</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-                                <p class="card-text">Descrição do chamado...</p>
-
-                            </div>
-                        </div>
-
-                        <div class="card mb-3 bg-light">
-                            <div class="card-body">
-                                <h5 class="card-title">Título do chamado...</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-                                <p class="card-text">Descrição do chamado...</p>
-
-                            </div>
-                        </div> -->
 
                         <div class="row mt-5">
                             <div class="col-6">

@@ -23,13 +23,30 @@ if (isset($_POST["titulo"])) {
 function searchFileLog(): array
 {
     $fileName = realpath("../_module/request.log");
+    $registers = array();
     $register = array();
     $file = fopen($fileName, "r");
 
-    if (file_exists($fileName)) {
+    while (!feof($file)) {
+        $registers[] = fgets($file);
+    }
 
-        while (!feof($file)) {
-            $register[] = fgets($file);
+    if ($_SESSION["perfil"] == 1) {
+
+        foreach ($registers as $values) {
+            $a = explode("#", $values);
+            if(count($a) < 3) continue;
+            $register[] = $a;
+        }
+
+    } else {
+        foreach ($registers as $key) {
+            $a = explode("#", $key);
+            if(count($a) < 3) continue;
+
+            if ($_SESSION["id"] == (int)$a[3]) {
+                $register[] = $a;
+            }
         }
     }
 
