@@ -42,7 +42,7 @@ class UserModel
         return $select;
     }
 
-    function selectUser($user)
+    function selectUser($user) :array
     {
         $query = "SELECT u.user_id, u.user_email, u.user_cpf, u.user_password, p.user_perfil FROM user AS u INNER JOIN perfil AS p ON u.user_id = p.user_id WHERE u.user_email = '".$user->getEmail()."'";
         $queryResult = $this->conectBd->executarMysql($query);

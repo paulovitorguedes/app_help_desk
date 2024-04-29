@@ -20,37 +20,44 @@ if (isset($_POST["titulo"])) {
     }
 }
 
-function searchFileLog(): array
+function searchFileLog() :array
 {
-    $fileName = realpath("../_module/request.log");
+    // $fileName = realpath("../_module/request.log");
     $registers = array();
     $register = array();
-    $file = fopen($fileName, "r");
+    $fileName = realpath("../_module/request.log");
 
-    while (!feof($file)) {
-        $registers[] = fgets($file);
-    }
+    if (file_exists($fileName)) {
+        $file = fopen($fileName, "r");
 
-    if ($_SESSION["perfil"] == 1) {
-
-        foreach ($registers as $values) {
-            $a = explode("#", $values);
-            if(count($a) < 3) continue;
-            $register[] = $a;
+        while (!feof($file)) {
+            $registers[] = fgets($file);
         }
 
-    } else {
-        foreach ($registers as $key) {
-            $a = explode("#", $key);
-            if(count($a) < 3) continue;
+        if ($_SESSION["perfil"] == 1) {
 
-            if ($_SESSION["id"] == (int)$a[3]) {
+            foreach ($registers as $values) {
+                $a = explode("#", $values);
+                if (count($a) < 3)
+                    continue;
                 $register[] = $a;
             }
+
+        } else {
+            foreach ($registers as $key) {
+                $a = explode("#", $key);
+                if (count($a) < 3)
+                    continue;
+
+                if ($_SESSION["id"] == (int) $a[3]) {
+                    $register[] = $a;
+                }
+            }
         }
+
+        fclose($file);
     }
 
-    fclose($file);
     return $register;
 }
 
