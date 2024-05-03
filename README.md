@@ -1,6 +1,6 @@
 <h1 align="center">App Help Desk</h1>
 
-![Interface-projeto-Calculator](_img/cadastro.png)
+![Interface-projeto](_img/cadastro.png)
 
 O App Help Desk é um sistema implementado em PHP para abertura de chamados em um suporte de informática. Permite o cadastro de usuários e a abertura de chamados técnicos. Cada usuário pode visualizar apenas seus próprios chamados, enquanto usuários administradores têm acesso a todos os chamados abertos.
 
